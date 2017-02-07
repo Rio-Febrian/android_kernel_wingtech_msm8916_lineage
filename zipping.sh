@@ -22,13 +22,13 @@ MAJORVERSION=$majorversion
 REVISION=$revision
 MINORVERSION=$minorversion
 TESTVERSION=$testversion
-VERSION=$majorversion.$revision.$minorversion
+VERSION=$majorversion.$minorversion.$revision
 echo -e "Build Type : \n1. Test\n2. Major upgrade\n3. Minor upgrade"
 read -p "4. Revision upgrade : " istest
 case $istest in
         [1]* )
 	TESTVERSION=$( expr $TESTVERSION + 1)
-	VERSION=$VERSION'-test'$testversion
+	VERSION=$VERSION'-test'$TESTVERSION
 	;;
 	[2]* )
 	MAJORVERSION=$( expr $MAJORVERSION + 1)
