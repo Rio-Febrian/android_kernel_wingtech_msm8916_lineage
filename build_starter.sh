@@ -35,6 +35,7 @@ echo "Check above for any errors.."
 read -p "Do you want to create a flashable zip? " zip
 case $zip in
 	[Yy]* )
-	bash $KERNEL_DIR/zipping.sh
+	cd $KERNEL_DIR
+	bash zipping.sh
 esac
 echo "Process completed.."
