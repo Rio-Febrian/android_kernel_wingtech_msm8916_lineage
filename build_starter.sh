@@ -2,6 +2,7 @@ echo "Declaring directories.."
 KERNEL_DIR=$(pwd)
 cd ..
 MAIN_DIR=$(pwd)
+LINARO_4_8_DIR=gcc-linaro-4.9-2016.02-x86_64_arm-eabi
 DTBTOOL_DIR=$MAIN_DIR/mkbootimg_tools
 echo "Switching to kernel directory.."
 cd $KERNEL_DIR
@@ -9,7 +10,7 @@ echo "Exporting arch, subarch and compiler directories.."
 export USE_CCACHE=1
 export ARCH=arm
 export SUBARCH=arm
-export CROSS_COMPILE=$MAIN_DIR/arm-eabi-4.8/bin/arm-eabi-
+export CROSS_COMPILE=$MAIN_DIR/$LINARO_4_8_DIR/bin/arm-eabi-
 read -p "Do you want to rebuild all? " rebuild
 case $rebuild in
 	[Yy]* ) 
